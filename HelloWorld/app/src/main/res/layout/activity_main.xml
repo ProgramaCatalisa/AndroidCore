@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="@dimen/largura_200"
+        android:layout_height="@dimen/altura_150"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/descricao_imagem_ilha_ubatuba"
+        android:src="@drawable/ilha_ubatuba" />
+
+    <TextView
+        android:id="@+id/text_view_boas_vindas"
+        android:layout_width="@dimen/largura_200"
+        android:layout_height="@dimen/altura_100"
+        android:layout_gravity="center"
+        android:text="@string/boas_vindas"
+        android:textColor="@color/cor_secundaria_verde"
+        android:textSize="@dimen/tamanho_texto_30" />
+
+    <TextView
+        android:id="@+id/text_view_nosso_nome"
+        android:layout_width="@dimen/largura_300"
+        android:layout_height="@dimen/altura_150"
+        android:layout_gravity="center"
+        android:text="@string/nosso_nome"
+        android:textColor="@color/cor_primaria_roxo"
+        android:textSize="@dimen/tamanho_fonte_40" />
+</LinearLayout>

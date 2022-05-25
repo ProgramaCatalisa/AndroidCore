@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Filme</string>
+    <string name="nome_filme">Lilo e Stitch</string>
+    <string name="descricao_imagem_filme">Foto do filme Lilo e Stitch, contendo a Lilo com roupa havaiana e o Stitch com roupa havaina dançando</string>
+    <string name="titulo_botao_mensagem">MENSAGEM</string>
+    <string name="titulo_botao_detalhe_filme">DETALHE FILME</string>
+    <string name="titulo_detalhe_filme">Detalhes</string>
+</resources>

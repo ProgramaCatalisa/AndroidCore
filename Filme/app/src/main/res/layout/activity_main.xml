@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/altura_250"
+        android:src="@drawable/filme"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/margem_36"
+        android:contentDescription="@string/descricao_imagem_filme"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nome_filme"
+        android:textSize="@dimen/tamanho_texto_16"
+        android:layout_marginTop="@dimen/margem_24"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/botao_mensagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_botao_mensagem"
+        android:layout_margin="@dimen/margem_24"
+        android:backgroundTint="@color/teal_700"/>
+
+    <Button
+        android:id="@+id/botao_detalhe_filme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_botao_detalhe_filme"
+        android:layout_margin="@dimen/margem_24"/>
+    </LinearLayout>
+</ScrollView>
