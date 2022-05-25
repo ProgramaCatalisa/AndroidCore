@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Filme">
         <activity
-            android:name=".DetalheFilme"
+            android:name=".DetalheFilmeActivity"
             android:exported="false"/>
         <activity
             android:name=".MainActivity"
