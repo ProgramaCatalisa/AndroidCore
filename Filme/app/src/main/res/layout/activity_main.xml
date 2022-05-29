@@ -23,6 +23,8 @@
         android:layout_height="wrap_content"
         android:text="@string/nome_filme"
         android:textSize="@dimen/tamanho_texto_16"
+        android:textStyle="bold"
+        android:textAlignment="center"
         android:layout_marginTop="@dimen/margem_24"
         android:layout_gravity="center"/>
 

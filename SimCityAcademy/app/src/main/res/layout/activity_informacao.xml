@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".informacao.InformacaoActivity">
+
+    <!-- TODO adicionar título da página -->
+    <!-- TODO adicionar um circuleImageView -->
+    <!-- TODO adicionar o textView para recuperar o nome do alune -->
+    <!-- TODO adicionar o textView para recuperar as médias do alune -->
+    <!-- TODO adicionar o textView para exibir o calculo da média -->
+    <!-- TODO adicionar o textView para exibir a mensagem de aprovação ou repovação -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

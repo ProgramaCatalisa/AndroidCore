@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fonte_24">24sp</dimen>
+    <dimen name="margem_24">24dp</dimen>
+    <dimen name="margem_16">16dp</dimen>
+</resources>

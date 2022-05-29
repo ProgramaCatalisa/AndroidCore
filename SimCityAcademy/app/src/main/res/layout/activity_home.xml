@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margem_24"
+            android:text="@string/titulo_home"
+            android:textColor="@color/pink_700"
+            android:textSize="@dimen/fonte_24"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margem_16"
+            android:gravity="start"
+            android:lineHeight="20dp"
+            android:text="@string/texto_informativo_home"
+            tools:targetApi="p" />
+
+        <EditText
+            android:id="@+id/etNomeAlune"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/margem_16"
+            android:hint="@string/nome_do_alune"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/etNotaUm"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/margem_16"
+            android:hint="@string/valor_da_primeira_nota"
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/etNotaDois"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/margem_16"
+            android:hint="@string/valor_da_segunda_nota"
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/etNotaTres"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/margem_16"
+            android:hint="@string/valor_da_terceira_nota"
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/etNotaQuatro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margem_16"
+            android:hint="@string/valor_da_quarta_nota"
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/btnCalcularMedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calcular_media"
+            android:layout_margin="@dimen/margem_16"
+            android:textAllCaps="true"/>
+    </LinearLayout>
+
+</ScrollView>

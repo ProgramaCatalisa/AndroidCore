@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SimCityAcademy</string>
+    <string name="titulo_home">SimCity Academy</string>
+    <string name="texto_informativo_home">Esse aplicativo tem o objetivo de ajudar todes de SimCity a calcular a média dos alunes nas escolas. \nPara isso você deverá preencher todos os campos necessários para realização do calculo.\nVamos lá!</string>
+    <string name="nome_do_alune">Nome do alune</string>
+    <string name="valor_da_primeira_nota">Valor da primeira nota</string>
+    <string name="valor_da_segunda_nota">Valor da segunda nota</string>
+    <string name="valor_da_terceira_nota">Valor da terceira nota</string>
+    <string name="valor_da_quarta_nota">Valor da quarta nota</string>
+    <string name="calcular_media">Calcular Média</string>
+    <string name="titulo_informacoes">Informações</string>
+</resources>
