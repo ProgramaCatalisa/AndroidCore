@@ -4,11 +4,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/capelo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/capelo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SimCityAcademy" >
+        android:theme="@style/Theme.SimCityAcademy" > <!-- TODO adição do icone de launcher -->
         <activity
             android:name=".informacao.InformacaoActivity"
             android:exported="false" />
