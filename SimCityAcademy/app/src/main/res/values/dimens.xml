@@ -5,4 +5,5 @@
     <dimen name="margem_16">16dp</dimen>
     <dimen name="margem_36">36dp</dimen>
     <dimen name="margem_40">40dp</dimen>
+    <dimen name="fonte_16">16sp</dimen>
 </resources>

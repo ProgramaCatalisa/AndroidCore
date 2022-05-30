@@ -3,17 +3,64 @@ package br.com.zup.simcityacademy.informacao
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import br.com.zup.simcityacademy.R
+import br.com.zup.simcityacademy.*
+import br.com.zup.simcityacademy.databinding.ActivityInformacaoBinding
 
 class InformacaoActivity : AppCompatActivity() {
-    //TODO lógica para vincular as view, recuperar e exibir os dados
+    private lateinit var binding: ActivityInformacaoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_informacao)
+        binding = ActivityInformacaoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setTitle(R.string.titulo_informacoes)
+
+        recuperarExibirDados()
+    }
+
+    private fun recuperarExibirDados() {
+        val nomeAlune = intent.getStringExtra(NOME_ALUNE)
+        val notaUm = intent.getStringExtra(NOTA_UM)?.toDouble()
+        val notaDois = intent.getStringExtra(NOTA_DOIS)?.toDouble()
+        val notaTres = intent.getStringExtra(NOTA_TRES)?.toDouble()
+        val notaQuatro = intent.getStringExtra(NOTA_QUATRO)?.toDouble()
+
+        if (nomeAlune != null
+            && notaUm != null
+            && notaDois != null
+            && notaTres != null
+            && notaQuatro != null
+        ) {
+
+            exibirNomeAlune(nomeAlune)
+            calcularMediaAlune(notaUm, notaDois, notaTres, notaQuatro)
+        }
+    }
+
+    private fun exibirNomeAlune(nome: String) {
+        binding.tvNomeAlune.text = nome
+    }
+
+    private fun calcularMediaAlune(
+        notaUm: Double,
+        notaDois: Double,
+        notaTres: Double,
+        notaQuatro: Double
+    ): Double {
+
+        // TODO desenvolver lógica da média
+        return 0.0
+    }
+
+    private fun exibirMensagemAlune(
+        notaUm: Double,
+        notaDois: Double,
+        notaTres: Double,
+        notaQuatro: Double
+    ) {
+        // TODO desenvolver lógica para exibir os dados
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import br.com.zup.simcityacademy.R
+import br.com.zup.simcityacademy.*
 import br.com.zup.simcityacademy.databinding.ActivityHomeBinding
 import br.com.zup.simcityacademy.informacao.InformacaoActivity
 
@@ -51,18 +51,18 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun enviarDadosAlune() {
-        val nomeAlune = binding.etNomeAlune?.text
-        val primeiraNota = binding.etNotaUm?.text
-        val segundaNota = binding.etNotaDois?.text
-        val terceiraNota = binding.etNotaTres?.text
-        val quartaNota = binding.etNotaQuatro?.text
+        val nomeAlune = binding.etNomeAlune.text
+        val primeiraNota = binding.etNotaUm.text
+        val segundaNota = binding.etNotaDois.text
+        val terceiraNota = binding.etNotaTres.text
+        val quartaNota = binding.etNotaQuatro.text
 
         val intent = Intent(this, InformacaoActivity::class.java).apply {
-           putExtra("NOME_ALUNE", nomeAlune)
-            putExtra("NOTA_UM", primeiraNota)
-            putExtra("NOTA_DOIS", segundaNota)
-            putExtra("NOTA_TRES", terceiraNota)
-            putExtra("NOTA_QUATRO", quartaNota)
+            putExtra(NOTA_UM, primeiraNota.toString())
+            putExtra(NOTA_DOIS, segundaNota.toString())
+            putExtra(NOTA_TRES, terceiraNota.toString())
+            putExtra(NOTA_QUATRO, quartaNota.toString())
+            putExtra(NOME_ALUNE, nomeAlune.toString())
         }
 
         startActivity(intent)

@@ -12,4 +12,6 @@
     <string name="nome_alune">Nome Alune</string>
     <string name="exemplo_media">média 9.0</string>
     <string name="mensagem_aprovacao">Alune aprovade!</string>
+    <string name="mensagem_aprovado">Parabéns voce foi aprovado!</string>
+    <string name="mensagem_reprovado">Infelizmente você foi reprovado =(</string>
 </resources>
