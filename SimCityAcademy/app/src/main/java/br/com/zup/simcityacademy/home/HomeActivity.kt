@@ -84,7 +84,7 @@ class HomeActivity : AppCompatActivity() {
 
             /**
              * Cria a Intent mandando um objeto do tipo Parcelable
-             * Lembrando que todo objeto que será enviado de uma tela para outra é
+             * Lembrando que todos os objetos que serao enviados de uma tela para outra é
              * preciso anotar a classe com @Parcelize e implementar a interface Parcelable
              */
             val intent = Intent(this, InformacaoActivity::class.java).apply {
