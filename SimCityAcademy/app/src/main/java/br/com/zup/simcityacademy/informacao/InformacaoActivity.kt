@@ -33,9 +33,10 @@ class InformacaoActivity : AppCompatActivity() {
             && notaTres != null
             && notaQuatro != null
         ) {
-
             exibirNomeAlune(nomeAlune)
-            calcularMediaAlune(notaUm, notaDois, notaTres, notaQuatro)
+            val media = calcularMediaAlune(notaUm, notaDois, notaTres, notaQuatro)
+            exibirMediaAlune(media)
+            exibirMensagemAlune(media)
         }
     }
 
@@ -49,18 +50,21 @@ class InformacaoActivity : AppCompatActivity() {
         notaTres: Double,
         notaQuatro: Double
     ): Double {
-
-        // TODO desenvolver lógica da média
-        return 0.0
+        return (notaUm + notaTres + notaDois + notaQuatro) / 4
     }
 
-    private fun exibirMensagemAlune(
-        notaUm: Double,
-        notaDois: Double,
-        notaTres: Double,
-        notaQuatro: Double
+    private fun exibirMediaAlune(
+        media: Double
     ) {
-        // TODO desenvolver lógica para exibir os dados
+        binding.tvMediaAlune.text = media.toString()
+    }
+
+    private fun exibirMensagemAlune(media: Double){
+        if (media >= 7){
+            binding.tvMensagem.text = getString(R.string.mensagem_aprovade)
+        }else{
+            binding.tvMensagem.text = getString(R.string.mensagem_reprovade)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
