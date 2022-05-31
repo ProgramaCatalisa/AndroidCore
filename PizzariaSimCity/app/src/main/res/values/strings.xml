@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PizzariaSimCity</string>
+    <string name="descricao_imagem_pizza">Imagem representando uma pizza com fundo amarelo e circulos vermelhos dentro/</string>
+    <string name="titulo_home">PIZZARIA SIMCITY</string>
+    <string name="texto_home">Esse é o aplicativo de pizza de SimCity! Aqui você encontra os melhores sabores em um único lugar!</string>
+</resources>
