@@ -9,6 +9,7 @@ import android.widget.Toast
 import br.com.zup.simcityacademy.*
 import br.com.zup.simcityacademy.databinding.ActivityHomeBinding
 import br.com.zup.simcityacademy.informacao.InformacaoActivity
+import br.com.zup.simcityacademy.model.Alune
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var editTextNomeAlune: EditText
@@ -52,11 +53,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun enviarDadosAlune() {
-        val nomeAlune = binding.etNomeAlune.text
-        val primeiraNota = binding.etNotaUm.text
-        val segundaNota = binding.etNotaDois.text
-        val terceiraNota = binding.etNotaTres.text
-        val quartaNota = binding.etNotaQuatro.text
+        val nomeAlune = binding.etNomeAlune.text.toString()
+        val primeiraNota = binding.etNotaUm.text.toString()
+        val segundaNota = binding.etNotaDois.text.toString()
+        val terceiraNota = binding.etNotaTres.text.toString()
+        val quartaNota = binding.etNotaQuatro.text.toString()
 
         if (nomeAlune.isNotEmpty() && nomeAlune != null
             && primeiraNota.isNotEmpty()
@@ -64,12 +65,17 @@ class HomeActivity : AppCompatActivity() {
             && terceiraNota.isNotEmpty()
             && quartaNota.isNotEmpty()
         ) {
+
+            val alune = Alune(
+                nomeAlune,
+                primeiraNota.toDouble(),
+                segundaNota.toDouble(),
+                terceiraNota.toDouble(),
+                quartaNota.toDouble()
+            )
+
             val intent = Intent(this, InformacaoActivity::class.java).apply {
-                putExtra(NOTA_UM, primeiraNota.toString())
-                putExtra(NOTA_DOIS, segundaNota.toString())
-                putExtra(NOTA_TRES, terceiraNota.toString())
-                putExtra(NOTA_QUATRO, quartaNota.toString())
-                putExtra(NOME_ALUNE, nomeAlune.toString())
+                putExtra(ALUNE, alune)
             }
 
             startActivity(intent)

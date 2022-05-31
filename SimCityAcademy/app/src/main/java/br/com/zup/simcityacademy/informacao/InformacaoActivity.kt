@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import br.com.zup.simcityacademy.*
 import br.com.zup.simcityacademy.databinding.ActivityInformacaoBinding
+import br.com.zup.simcityacademy.model.Alune
 
 class InformacaoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInformacaoBinding
@@ -26,6 +27,8 @@ class InformacaoActivity : AppCompatActivity() {
         val notaDois = intent.getStringExtra(NOTA_DOIS)?.toDouble()
         val notaTres = intent.getStringExtra(NOTA_TRES)?.toDouble()
         val notaQuatro = intent.getStringExtra(NOTA_QUATRO)?.toDouble()
+
+        //TODO receber o objeto alune que esta chegando
 
         if (nomeAlune != null
             && notaUm != null
