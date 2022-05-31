@@ -43,6 +43,7 @@ class HomeActivity : AppCompatActivity() {
         btnCalcularMédia?.setOnClickListener {
             enviarDadosAlune()
         }
+        limparOsCamposEdicao()
     }
 
     private fun initViews() {
@@ -57,14 +58,36 @@ class HomeActivity : AppCompatActivity() {
         val terceiraNota = binding.etNotaTres.text
         val quartaNota = binding.etNotaQuatro.text
 
-        val intent = Intent(this, InformacaoActivity::class.java).apply {
-            putExtra(NOTA_UM, primeiraNota.toString())
-            putExtra(NOTA_DOIS, segundaNota.toString())
-            putExtra(NOTA_TRES, terceiraNota.toString())
-            putExtra(NOTA_QUATRO, quartaNota.toString())
-            putExtra(NOME_ALUNE, nomeAlune.toString())
+        if (nomeAlune.isNotEmpty() && nomeAlune != null
+            && primeiraNota.isNotEmpty()
+            && segundaNota.isNotEmpty()
+            && terceiraNota.isNotEmpty()
+            && quartaNota.isNotEmpty()
+        ) {
+            val intent = Intent(this, InformacaoActivity::class.java).apply {
+                putExtra(NOTA_UM, primeiraNota.toString())
+                putExtra(NOTA_DOIS, segundaNota.toString())
+                putExtra(NOTA_TRES, terceiraNota.toString())
+                putExtra(NOTA_QUATRO, quartaNota.toString())
+                putExtra(NOME_ALUNE, nomeAlune.toString())
+            }
+
+            startActivity(intent)
+        }else{
+            binding.etNomeAlune.error = "campo obrigatorio!"
+            binding.etNotaUm.error = "campo obrigatorio!"
+            binding.etNotaDois.error = "campo obrigatorio!"
+            binding.etNotaTres.error = "campo obrigatorio!"
+            binding.etNotaQuatro.error = "campo obrigatorio!"
         }
 
-        startActivity(intent)
+    }
+
+    private fun limparOsCamposEdicao() {
+        binding.etNomeAlune.text.clear()
+        binding.etNotaUm.text.clear()
+        binding.etNotaDois.text.clear()
+        binding.etNotaTres.text.clear()
+        binding.etNotaQuatro.text.clear()
     }
 }
