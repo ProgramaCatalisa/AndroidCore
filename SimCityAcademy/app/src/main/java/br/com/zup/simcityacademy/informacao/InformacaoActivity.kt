@@ -22,8 +22,19 @@ class InformacaoActivity : AppCompatActivity() {
     }
 
     private fun recuperarExibirDados() {
+        /**
+         * Recuperando o objeto que está chegando a partir da intent
+         * nesse caso usamos getParcelableExtra por que é o tipo de dado
+         * que vamos recuperar da intent e entre os sinais de < e >
+         * passamos a classe que queremos definir o tipo do nosso objeto
+         * que nesse caso é Alune, e por fim passamos a chave para recuperar o valor
+         * Obs: todas as chaves estao declaradas no arquivo de Constantes
+         */
         val alune = intent.getParcelableExtra<Alune>(ALUNE)
 
+        /**
+         * Verificação para saber se o objeto está nulo
+         */
         if (alune != null) {
             exibirNomeAlune(alune.getNome())
             val media = calcularMediaAlune(

@@ -12,6 +12,10 @@ import br.com.zup.simcityacademy.informacao.InformacaoActivity
 import br.com.zup.simcityacademy.model.Alune
 
 class HomeActivity : AppCompatActivity() {
+    /**
+     * Exemplo de vinculação de views de várias formas diferentes
+     * usando: lateinit var, by lazy, variavel nullable e com viewbindig
+     */
     private lateinit var editTextNomeAlune: EditText
     private val editTextNotaUm: EditText by lazy { findViewById(R.id.etNotaUm) }
     private val editTextNotaDois: EditText by lazy { findViewById(R.id.etNotaDois) }
@@ -21,6 +25,16 @@ class HomeActivity : AppCompatActivity() {
      * Declaração do viewBinding no projeto
      */
     private lateinit var binding: ActivityHomeBinding
+
+
+    /**
+     * Declaração de atributos que serão inicializados depois
+     */
+    private lateinit var nome: String
+    private lateinit var primeiraNota: String
+    private lateinit var segundaNota: String
+    private lateinit var terceiraNota: String
+    private lateinit var quartaNota: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,51 +58,87 @@ class HomeActivity : AppCompatActivity() {
         btnCalcularMédia?.setOnClickListener {
             enviarDadosAlune()
         }
-        limparOsCamposEdicao()
     }
 
+    /**
+     * Exemplo de inicialização de view com o uso de findViewById
+     */
     private fun initViews() {
         editTextNomeAlune = findViewById(R.id.etNomeAlune)
         btnCalcularMédia = findViewById(R.id.btnCalcularMedia)
     }
 
     private fun enviarDadosAlune() {
-        val nomeAlune = binding.etNomeAlune.text.toString()
-        val primeiraNota = binding.etNotaUm.text.toString()
-        val segundaNota = binding.etNotaDois.text.toString()
-        val terceiraNota = binding.etNotaTres.text.toString()
-        val quartaNota = binding.etNotaQuatro.text.toString()
-
-        if (nomeAlune.isNotEmpty() && nomeAlune != null
-            && primeiraNota.isNotEmpty()
-            && segundaNota.isNotEmpty()
-            && terceiraNota.isNotEmpty()
-            && quartaNota.isNotEmpty()
-        ) {
-
+        recuperarDadosCampoEdicao()
+        if (!verificarCamposEdicao()) {
+            /**
+             * Cria o objeto do tipo Alune
+             */
             val alune = Alune(
-                nomeAlune,
+                nome,
                 primeiraNota.toDouble(),
                 segundaNota.toDouble(),
                 terceiraNota.toDouble(),
                 quartaNota.toDouble()
             )
 
+            /**
+             * Cria a Intent mandando um objeto do tipo Parcelable
+             * Lembrando que todo objeto que será enviado de uma tela para outra é
+             * preciso anotar a classe com @Parcelize e implementar a interface Parcelable
+             */
             val intent = Intent(this, InformacaoActivity::class.java).apply {
                 putExtra(ALUNE, alune)
             }
-
             startActivity(intent)
-        }else{
-            binding.etNomeAlune.error = "campo obrigatorio!"
-            binding.etNotaUm.error = "campo obrigatorio!"
-            binding.etNotaDois.error = "campo obrigatorio!"
-            binding.etNotaTres.error = "campo obrigatorio!"
-            binding.etNotaQuatro.error = "campo obrigatorio!"
+            limparOsCamposEdicao()
         }
-
     }
 
+    /**
+     * Método que recupera o texto digitado pelo usuário e adiciona nos atributos declarados
+     */
+    private fun recuperarDadosCampoEdicao() {
+        this.nome = binding.etNomeAlune.text.toString()
+        this.primeiraNota = binding.etNotaUm.text.toString()
+        this.segundaNota = binding.etNotaDois.text.toString()
+        this.terceiraNota = binding.etNotaTres.text.toString()
+        this.quartaNota = binding.etNotaQuatro.text.toString()
+    }
+
+    /**
+     * Método que verifica se nenhum campo está vazio antes de mudar de tela
+     */
+    private fun verificarCamposEdicao(
+    ): Boolean {
+        when {
+            this.nome.isEmpty() -> {
+                binding.etNomeAlune.error = "Por favor preencha o campo de nome!"
+                return true
+            }
+            this.primeiraNota.isEmpty() -> {
+                binding.etNotaUm.error = MENSAGEM_CAMPO_NOTA_OBRIGATORIO
+                return true
+            }
+            this.segundaNota.isEmpty() -> {
+                binding.etNotaDois.error = MENSAGEM_CAMPO_NOTA_OBRIGATORIO
+                return true
+            }
+            this.terceiraNota.isEmpty() -> {
+                binding.etNotaTres.error = MENSAGEM_CAMPO_NOTA_OBRIGATORIO
+                return true
+            }
+            this.quartaNota.isEmpty() -> {
+                binding.etNotaQuatro.error = MENSAGEM_CAMPO_NOTA_OBRIGATORIO
+                return true
+            }
+        }
+        return false
+    }
+
+    /**
+     * Método que limpa os editText
+     */
     private fun limparOsCamposEdicao() {
         binding.etNomeAlune.text.clear()
         binding.etNotaUm.text.clear()
