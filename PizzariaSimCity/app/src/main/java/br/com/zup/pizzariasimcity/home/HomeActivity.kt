@@ -7,6 +7,7 @@ import br.com.zup.pizzariasimcity.R
 import br.com.zup.pizzariasimcity.databinding.ActivityHomeBinding
 import br.com.zup.pizzariasimcity.fragments.DetalheFragment
 import br.com.zup.pizzariasimcity.fragments.ProdutoFragment
+import br.com.zup.pizzariasimcity.model.Pizza
 
 class HomeActivity : AppCompatActivity(), FragmentoClick {
     private lateinit var binding: ActivityHomeBinding
@@ -26,9 +27,11 @@ class HomeActivity : AppCompatActivity(), FragmentoClick {
     }
 
     override fun clickFragmento(mensagem: String) {
+        val pizzaMargueria = Pizza("Marguerita", mensagem)
+
         val fragmentoDetalhe = DetalheFragment().apply {
             arguments = Bundle().apply {
-                putString("TEXTO", mensagem)
+                putParcelable("PIZZA_MARGUERITA", pizzaMargueria)
             }
         }
 

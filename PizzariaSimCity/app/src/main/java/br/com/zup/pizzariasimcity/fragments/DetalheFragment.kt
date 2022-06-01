@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.zup.pizzariasimcity.R
 import br.com.zup.pizzariasimcity.databinding.FragmentDetalheBinding
+import br.com.zup.pizzariasimcity.model.Pizza
 
 class DetalheFragment : Fragment() {
     private lateinit var binding: FragmentDetalheBinding
@@ -22,8 +23,10 @@ class DetalheFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val mensagemRecebida = arguments?.getString("TEXTO")
-        binding.tvMensagem.text = mensagemRecebida
+        val pizzaRecebida = arguments?.getParcelable<Pizza>("PIZZA_MARGUERITA")
 
+        if (pizzaRecebida != null){
+            binding.tvMensagem.text = pizzaRecebida.getDescricaoPizza()
+        }
     }
 }
