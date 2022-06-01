@@ -3,4 +3,7 @@
     <string name="descricao_imagem_pizza">Imagem representando uma pizza com fundo amarelo e circulos vermelhos dentro/</string>
     <string name="titulo_home">PIZZARIA SIMCITY</string>
     <string name="texto_home">Esse é o aplicativo de pizza de SimCity! Aqui você encontra os melhores sabores em um único lugar!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nome_pizza_marguerita">Marguerita</string>
 </resources>

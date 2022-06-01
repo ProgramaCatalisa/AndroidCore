@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margem_32">32dp</dimen>
+    <dimen name="fonte_20">20sp</dimen>
+    <dimen name="margem_36">36dp</dimen>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProdutoFragment"
+    android:background="@color/teal_700">
+
+    <TextView
+        android:id="@+id/tvNomePizza"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/nome_pizza_marguerita"
+        android:textSize="@dimen/fonte_20"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/margem_36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
