@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".produto.ProdutoFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24"
+        android:text="@string/nome_produto"
+        android:textSize="@dimen/font_size_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNomeProduto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:hint="@string/hint_nome_produto"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/etDetalheProduto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/detalhe_produto"
+        app:layout_constraintEnd_toEndOf="@+id/etNomeProduto"
+        app:layout_constraintStart_toStartOf="@+id/etNomeProduto"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeProduto"/>
+
+    <Button
+        android:id="@+id/bvAdicionar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:text="@string/adicionar"
+        app:layout_constraintEnd_toEndOf="@+id/etDetalheProduto"
+        app:layout_constraintStart_toStartOf="@+id/etDetalheProduto"
+        app:layout_constraintTop_toBottomOf="@+id/etDetalheProduto" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaProdutos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        tools:listitem="@layout/produto_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bvAdicionar"
+        app:layout_constraintStart_toStartOf="@+id/bvAdicionar"
+        app:layout_constraintTop_toBottomOf="@+id/bvAdicionar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

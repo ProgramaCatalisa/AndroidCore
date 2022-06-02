@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lista de Compras</string>
+    <string name="descricao_imagem_splash">Imagem representando um papel verde com lista e um lápis em cima</string>
+    <string name="texto_home">Adicione os itens que deseja comprar na sua lista!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nome_produto">Adicione aqui o nome do produto:</string>
+    <string name="hint_nome_produto">Nome produto</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="detalhe_produto">Detalhe do produto</string>
+</resources>
