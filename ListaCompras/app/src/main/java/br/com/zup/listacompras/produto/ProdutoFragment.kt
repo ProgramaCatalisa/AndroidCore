@@ -1,25 +1,21 @@
 package br.com.zup.listacompras.produto
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.listacompras.CHAVE_PRODUTO
 import br.com.zup.listacompras.R
-import br.com.zup.listacompras.adapter.ProdutoAdapter
 import br.com.zup.listacompras.databinding.FragmentProdutoBinding
 import br.com.zup.listacompras.model.Produto
 
 class ProdutoFragment : Fragment() {
     private lateinit var binding: FragmentProdutoBinding
 
-    private val adapter: ProdutoAdapter by lazy {
-        ProdutoAdapter(arrayListOf(), this::irParaDetalheProduto)
-    }
+    //TODO criar e inicializar o Adapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,21 +36,11 @@ class ProdutoFragment : Fragment() {
     }
 
     private fun exibirRecyclerView() {
-        binding.rvListaProdutos.adapter = adapter
-        binding.rvListaProdutos.layoutManager = LinearLayoutManager(context)
+        //TODO fazer a lógica para exibir o RecyclerView
     }
 
     private fun adicionarItemListaProduto() {
-        val listaProduto = mutableListOf<Produto>()
-        val produtoRecebido = recuperarDadosCampoEdicao()
-
-        if (produtoRecebido != null) {
-            listaProduto.add(produtoRecebido)
-            adapter.atualizarListaProduto(listaProduto)
-            exibirRecyclerView()
-        } else {
-            exibirMensagemErro()
-        }
+        //TODO fazer a lógica para adicionar um item em uma lista
     }
 
     private fun irParaDetalheProduto(produto: Produto) {

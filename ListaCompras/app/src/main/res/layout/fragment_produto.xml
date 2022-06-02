@@ -47,16 +47,5 @@
         app:layout_constraintStart_toStartOf="@+id/etDetalheProduto"
         app:layout_constraintTop_toBottomOf="@+id/etDetalheProduto" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListaProdutos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_8"
-        android:layout_marginBottom="@dimen/margin_8"
-        tools:listitem="@layout/produto_item"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/bvAdicionar"
-        app:layout_constraintStart_toStartOf="@+id/bvAdicionar"
-        app:layout_constraintTop_toBottomOf="@+id/bvAdicionar" />
-
+    <!-- TODO adicionar o recyclerView e criar o layout do item-->
 </androidx.constraintlayout.widget.ConstraintLayout>
