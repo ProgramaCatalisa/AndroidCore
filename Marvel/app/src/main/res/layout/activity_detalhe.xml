@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detalhe.DetalheActivity">
+
+    <ImageView
+        android:id="@+id/ivHeroiDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="@dimen/margin_16"
+        android:scaleType="centerCrop"
+        android:src="@drawable/vampira"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNomeHeroiDetalhe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:text="@string/lista_nome_heroi"
+        android:textAlignment="center"
+        android:textSize="@dimen/font_size_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ivHeroiDetalhe"
+        app:layout_constraintStart_toStartOf="@+id/ivHeroiDetalhe"
+        app:layout_constraintTop_toBottomOf="@+id/ivHeroiDetalhe" />
+
+    <TextView
+        android:id="@+id/tvHeroiDetalhe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:text="@string/texto_detalhe_descricao"
+        app:layout_constraintEnd_toEndOf="@+id/ivHeroiDetalhe"
+        app:layout_constraintStart_toStartOf="@+id/ivHeroiDetalhe"
+        app:layout_constraintTop_toBottomOf="@+id/tvNomeHeroiDetalhe" />
+</androidx.constraintlayout.widget.ConstraintLayout>
