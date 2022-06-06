@@ -17,4 +17,5 @@ class QuadrinhosFragment : Fragment() {
         binding = FragmentQuadrinhosBinding.inflate(inflater, container, false)
         return binding.root
     }
+
 }
