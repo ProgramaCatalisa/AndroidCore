@@ -8,7 +8,7 @@
         <entry key="app/src/main/res/layout/fragment_detalhe.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/fragment_produto.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/layout_item.xml" value="0.28125" />
-        <entry key="app/src/main/res/layout/produto_item.xml" value="0.28125" />
+        <entry key="app/src/main/res/layout/produto_item.xml" value="0.45" />
       </map>
     </option>
   </component>
