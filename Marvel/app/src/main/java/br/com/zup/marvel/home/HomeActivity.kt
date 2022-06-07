@@ -31,12 +31,12 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun exibirRecyclerView() {
-        adicionarItemListaProduto()
+        adicionarItemListaMarvel()
         binding.rvHerois.adapter = adapter
         binding.rvHerois.layoutManager = LinearLayoutManager(this)
     }
 
-    private fun adicionarItemListaProduto() {
+    private fun adicionarItemListaMarvel() {
         val listaHerois = mutableListOf<Marvel>()
 
         listaHerois.add(
@@ -62,7 +62,7 @@ class HomeActivity : AppCompatActivity() {
                 MULHER_INVISVEL_DESCRICAO
             )
         )
-        adapter.atualizarListaProduto(listaHerois)
+        adapter.atualizarListaMarvel(listaHerois)
     }
 
     private fun irParaDetalhe(heroi: Marvel) {

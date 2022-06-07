@@ -26,7 +26,7 @@ class MarvelAdapter(
 
     override fun getItemCount() = listaHerois.size
 
-    fun atualizarListaProduto(novaLista: MutableList<Marvel>) {
+    fun atualizarListaMarvel(novaLista: MutableList<Marvel>) {
         if (listaHerois.size == 0) {
             listaHerois = novaLista
         } else {
