@@ -18,5 +18,9 @@
         android:id="@+id/detalheFragment"
         android:name="br.com.zup.listacompras.detalhe.DetalheFragment"
         android:label="fragment_detalhe"
-        tools:layout="@layout/fragment_detalhe" />
+        tools:layout="@layout/fragment_detalhe" >
+        <argument
+            android:name="produto"
+            app:argType="br.com.zup.listacompras.model.Produto" />
+    </fragment>
 </navigation>

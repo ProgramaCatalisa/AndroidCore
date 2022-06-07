@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.listacompras.CHAVE_PRODUTO
 import br.com.zup.listacompras.R
@@ -59,11 +60,14 @@ class ProdutoFragment : Fragment() {
 
     private fun irParaDetalheProduto(produto: Produto) {
 
+        val action = ProdutoFragmentDirections.actionProdutoFragmentToDetalheFragment(produto)
+        findNavController().navigate(action)
+/*
         val bundle = bundleOf(CHAVE_PRODUTO to produto)
 
         NavHostFragment.findNavController(this).navigate(
             R.id.action_produtoFragment_to_detalheFragment, bundle
-        )
+        )*/
     }
 
     private fun recuperarDadosCampoEdicao(): Produto? {
