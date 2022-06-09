@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MinhaBandaFavorita</string>
+    <string name="app_name">Banda Favorita</string>
+    <string name="home_album_favorito">Albuns favoritos</string>
 </resources>
