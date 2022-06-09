@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26614583333333336" />
         <entry key="app/src/main/res/layout/album_item.xml" value="0.625" />
         <entry key="app/src/main/res/layout/fragment_album.xml" value="0.19519927536231885" />
+        <entry key="app/src/main/res/layout/fragment_detalhe_album.xml" value="0.2390625" />
       </map>
     </option>
   </component>

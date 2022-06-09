@@ -1,13 +1,14 @@
 package br.com.zup.minhabandafavorita.album
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import br.com.zup.minhabandafavorita.ALBUM_KEY
 import br.com.zup.minhabandafavorita.R
 import br.com.zup.minhabandafavorita.album.adapter.AlbumAdapter
 import br.com.zup.minhabandafavorita.databinding.FragmentAlbumBinding
@@ -30,13 +31,12 @@ class AlbumFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        exibirRecyclerView()
+        criarListaAlbum()
     }
 
     private fun exibirRecyclerView(){
         binding.rvListaAlbum.adapter = albumAdapter
         binding.rvListaAlbum.layoutManager = GridLayoutManager(context, 2)
-        criarListaAlbum()
     }
 
     private fun criarListaAlbum() {
@@ -52,9 +52,14 @@ class AlbumFragment : Fragment() {
         listaAlbum.add(Album(R.drawable.album6, "Album 4"))
 
         albumAdapter.atualizarListaAlbuns(listaAlbum)
+        exibirRecyclerView()
     }
 
     private fun irParaDetalheAlbum(album: Album){
-        Toast.makeText(context, "Item clicado ${album.getName()}", Toast.LENGTH_LONG).show()
+       val bundle = bundleOf(ALBUM_KEY to album)
+
+        NavHostFragment.findNavController(this).navigate(
+           R.id.action_albumFragment2_to_detalheAlbumFragment2, bundle
+        )
     }
 }

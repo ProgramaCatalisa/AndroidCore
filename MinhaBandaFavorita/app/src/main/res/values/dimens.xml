@@ -4,4 +4,5 @@
     <dimen name="margin_16">16dp</dimen>
     <dimen name="size_100">100dp</dimen>
     <dimen name="margin_8">8dp</dimen>
+    <dimen name="size_200">200dp</dimen>
 </resources>
