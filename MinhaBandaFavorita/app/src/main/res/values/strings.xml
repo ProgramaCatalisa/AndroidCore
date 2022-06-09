@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Banda Favorita</string>
     <string name="home_album_favorito">Albuns favoritos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="item_descricao_album">Foto do album do Skank</string>
 </resources>

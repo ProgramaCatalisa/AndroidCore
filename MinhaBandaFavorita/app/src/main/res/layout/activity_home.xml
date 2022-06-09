@@ -7,17 +7,31 @@
     tools:context=".home.HomeActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16"
         android:layout_marginTop="@dimen/margin_16"
+        android:gravity="center_horizontal"
         android:text="@string/home_album_favorito"
         android:textAlignment="center"
         android:textSize="@dimen/font_size_16"
-        android:layout_margin="@dimen/margin_16"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_16"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:navGraph="@navigation/nav_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
