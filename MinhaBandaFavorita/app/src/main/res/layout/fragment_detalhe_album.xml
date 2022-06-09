@@ -30,4 +30,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivDetalheAlbum" />
 
+    <Button
+        android:id="@+id/bvMusicaFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16"
+        android:text="Ir para musicas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetalheAlbum" />
 </androidx.constraintlayout.widget.ConstraintLayout>

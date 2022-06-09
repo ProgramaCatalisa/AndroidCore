@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MinhaBandaFavorita">
         <activity
+            android:name=".musica.MusicaActivity"
+            android:exported="false" />
+        <activity
             android:name=".home.HomeActivity"
             android:exported="true">
             <intent-filter>

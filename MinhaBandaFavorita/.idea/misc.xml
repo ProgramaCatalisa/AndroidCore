@@ -5,9 +5,11 @@
       <map>
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26614583333333336" />
+        <entry key="app/src/main/res/layout/activity_musica.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/album_item.xml" value="0.625" />
         <entry key="app/src/main/res/layout/fragment_album.xml" value="0.19519927536231885" />
         <entry key="app/src/main/res/layout/fragment_detalhe_album.xml" value="0.2390625" />
+        <entry key="app/src/main/res/layout/fragment_musica_album.xml" value="0.335" />
       </map>
     </option>
   </component>

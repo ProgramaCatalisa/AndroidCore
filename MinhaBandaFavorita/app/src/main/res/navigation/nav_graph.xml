@@ -19,7 +19,13 @@
         android:label="fragment_detalhe_album"
         tools:layout="@layout/fragment_detalhe_album" >
         <action
-            android:id="@+id/action_detalheAlbumFragment2_to_albumFragment2"
-            app:destination="@id/albumFragment2" />
+            android:id="@+id/action_detalheAlbumFragment2_to_musicaAlbumFragment"
+            app:destination="@id/musicaAlbumFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/musicaAlbumFragment"
+        android:name="br.com.zup.minhabandafavorita.musica.MusicaAlbumFragment"
+        android:label="fragment_musica_album"
+        tools:layout="@layout/fragment_musica_album" />
 </navigation>
