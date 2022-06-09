@@ -7,7 +7,8 @@ import br.com.zup.minhabandafavorita.databinding.AlbumItemBinding
 import br.com.zup.minhabandafavorita.model.Album
 
 class AlbumAdapter(
-    private var listaAlbum: MutableList<Album>
+    private var listaAlbum: MutableList<Album>,
+    private val clickAlbum: (album: Album) -> Unit
 ) : RecyclerView.Adapter<AlbumAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -16,11 +17,23 @@ class AlbumAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val album = listaAlbum[position]
+        holder.exibirDadosItemLista(album)
+        holder.binding.cvItem.setOnClickListener {
+            clickAlbum(album)
+        }
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+    override fun getItemCount(): Int = listaAlbum.size
+
+    fun atualizarListaAlbuns(novaListaAlbum: MutableList<Album>){
+        if (listaAlbum.size == 0){
+            listaAlbum = novaListaAlbum
+        }else{
+            listaAlbum.addAll(novaListaAlbum)
+        }
+
+        notifyDataSetChanged()
     }
 
     class ViewHolder(val binding: AlbumItemBinding) : RecyclerView.ViewHolder(binding.root){
