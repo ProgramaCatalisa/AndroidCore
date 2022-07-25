@@ -35,7 +35,7 @@
         android:hint="@string/detalhe_produto"
         app:layout_constraintEnd_toEndOf="@+id/etNomeProduto"
         app:layout_constraintStart_toStartOf="@+id/etNomeProduto"
-        app:layout_constraintTop_toBottomOf="@+id/etNomeProduto"/>
+        app:layout_constraintTop_toBottomOf="@+id/etNomeProduto" />
 
     <Button
         android:id="@+id/bvAdicionar"
@@ -48,15 +48,11 @@
         app:layout_constraintTop_toBottomOf="@+id/etDetalheProduto" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListaProdutos"
-        android:layout_width="0dp"
+        android:id="@+id/rvListaProduto"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_8"
-        android:layout_marginBottom="@dimen/margin_8"
-        tools:listitem="@layout/produto_item"
+        android:layout_margin="@dimen/margin_8"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/bvAdicionar"
-        app:layout_constraintStart_toStartOf="@+id/bvAdicionar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bvAdicionar" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

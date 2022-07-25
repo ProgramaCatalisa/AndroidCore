@@ -1,13 +1,15 @@
 package br.com.zup.listacompras.produto
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import br.com.zup.listacompras.CHAVE_PRODUTO
 import br.com.zup.listacompras.R
 import br.com.zup.listacompras.adapter.ProdutoAdapter
@@ -17,8 +19,8 @@ import br.com.zup.listacompras.model.Produto
 class ProdutoFragment : Fragment() {
     private lateinit var binding: FragmentProdutoBinding
 
-    private val adapter: ProdutoAdapter by lazy {
-        ProdutoAdapter(arrayListOf(), this::irParaDetalheProduto)
+    private val produtoAdapter: ProdutoAdapter by lazy {
+        ProdutoAdapter(arrayListOf())
     }
 
     override fun onCreateView(
@@ -40,19 +42,20 @@ class ProdutoFragment : Fragment() {
     }
 
     private fun exibirRecyclerView() {
-        binding.rvListaProdutos.adapter = adapter
-        binding.rvListaProdutos.layoutManager = LinearLayoutManager(context)
+        binding.rvListaProduto.adapter = produtoAdapter
+        binding.rvListaProduto.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
     }
 
     private fun adicionarItemListaProduto() {
-        val listaProduto = mutableListOf<Produto>()
-        val produtoRecebido = recuperarDadosCampoEdicao()
+        val listaNovaProduto = mutableListOf<Produto>()
 
-        if (produtoRecebido != null) {
-            listaProduto.add(produtoRecebido)
-            adapter.atualizarListaProduto(listaProduto)
+        val produto = recuperarDadosCampoEdicao()
+
+        if (produto != null){
+            listaNovaProduto.add(produto)
+            produtoAdapter.atualizarListaProduto(listaNovaProduto)
             exibirRecyclerView()
-        } else {
+        }else{
             exibirMensagemErro()
         }
     }
