@@ -66,9 +66,10 @@ class ProdutoFragment : Fragment() {
         )
     }
 
-    private fun recuperarDadosCampoEdicao(): Produto? {
-        val nomeProduto = binding.etNomeProduto.text.toString()
-        val descricaoProduto = binding.etDetalheProduto.text.toString()
+    fun recuperarDadosCampoEdicao(
+        nomeProduto : String = binding.etNomeProduto.text.toString(),
+        descricaoProduto : String = binding.etDetalheProduto.text.toString()
+    ): Produto? {
 
         if (nomeProduto.isNotEmpty() && descricaoProduto.isNotEmpty()) {
             limparCampoEdicao()
